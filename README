@@ -33,6 +33,8 @@ The sources are:
     rip     -- ripped from CD
     flacdl  -- originally downloaded in flac, then re-encoded
 
+I use the "abcde" command-line tool to rip CDs.
+
 In case you care, my music player is a Sansa Clip Zip; it's cheap, it plays
 ogg, mp3, and flac, and you can expand it by up to 32GB.
 
