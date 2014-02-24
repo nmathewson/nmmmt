@@ -1,0 +1,36 @@
+nick's minimal music maintenance tools
+--------------------------------------
+
+This is crappy one-off code that wasn't actually meant for anybody anybody
+else to see. I mentioned its existence to somebody once, and they asked me
+to put it online, so here goes.
+
+I'm putting it under the public domain, under the creative commons "CC0"
+license/grant/thing.  I'm including a copy of the full cc0 legal document
+under doc/cc0.txt.
+
+There are two scripts here.  One of them converts a bunch of flacs in one
+directory tree into a bunch of oggs in another parallel directory tree.  The
+other one looks at a bunch of two-level directory trees of oggs and mp3s
+(where the trees are in the form Artist/Album/Song), and copies the ones that
+you select into another directory -- presumably a mountpoint for your music
+player.
+
+My paths are hardcoded in these scripts.
+
+I organize my music by format and source.  Top-level directories have names
+like "flac_dl" or "ogg_rip".  The formats are:
+    flac -- my preferred lossless format
+    ogg  -- my preferred lossy format. (ogg/vorbis if you're pedantic)
+    misc -- other stuff.
+The sources are:
+    dl      -- downloaded (legally, of course)
+    rip     -- ripped from CD
+    flacdl  -- originally downloaded in flac, then re-encoded
+
+In case you care, my music player is a Sansa Clip Zip; it's cheap, it plays
+ogg, mp3, and flac, and you can expand it by up to 32GB.
+
+If it breaks, you keep both pieces.  If it deletes all your music, I hope you
+kept a backup.
+
