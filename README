@@ -9,6 +9,11 @@ I'm putting it under the public domain, under the creative commons "CC0"
 license/grant/thing.  I'm including a copy of the full cc0 legal document
 under doc/cc0.txt.
 
+You probably shouldn't use these scripts.  There is probably a better
+solution for you.  I did them because it was literally faster for me to write
+them than to locate an existing solution, learn it, and figure out how to
+make it do what I wanted.
+
 There are two scripts here.  One of them converts a bunch of flacs in one
 directory tree into a bunch of oggs in another parallel directory tree.  The
 other one looks at a bunch of two-level directory trees of oggs and mp3s
