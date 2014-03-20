@@ -1,5 +1,15 @@
 #!/usr/bin/python3
 
+#   This software has been dedicated to the public domain under the CC0
+#   public domain dedication.
+#
+#   To the extent possible under law, the person who associated CC0 with
+#   this script has waived all copyright and related or neighboring rights.
+#
+#   You should have received a copy of the CC0 legalcode along with this
+#   work in doc/cc0.txt.  If not, see
+#      <http://creativecommons.org/publicdomain/zero/1.0/>.
+
 import os
 import re
 
