@@ -12,6 +12,7 @@
 
 import os
 import re
+import sys
 
 def get_track_num(fn):
     m = re.match(r'(\d+)[^a-zA-Z0-9]', fn)
@@ -32,7 +33,28 @@ def is_well_numbered(d):
             return False
     return True
 
+def get_album_speed(d):
+    files = []
+    for f in os.listdir(d):
+        st = os.stat(os.path.join(d,f))
+        files.append((st.st_mtime, st.st_size))
+    files.sort()
+    total_time = files[-1][0] - files[0][0]
+    total_size = sum(files[i][1] for i in range(1,len(files)))
+    if total_time == 0:
+        total_time = 1
+    return float(total_size) / total_time
+
+gaps=slow=False
+
+if sys.argv[1] == 'gaps':
+    gaps = True
+else:
+    slow = True
+
 D = 'flac_rip'
+
+album_speed = []
 
 for artist in sorted(os.listdir(D)):
     if not os.path.isdir(os.path.join(D,artist)):
@@ -40,5 +62,12 @@ for artist in sorted(os.listdir(D)):
     for album in sorted(os.listdir(os.path.join(D,artist))):
         if not os.path.isdir(os.path.join(D,artist,album)):
             continue
-        if not is_well_numbered(os.path.join(D,artist,album)):
+        if gaps and not is_well_numbered(os.path.join(D,artist,album)):
             print(artist,album)
+        if slow:
+            s = get_album_speed(os.path.join(D,artist,album))
+            album_speed.append((s,artist,album))
+
+album_speed.sort()
+for s,artist,album in album_speed:
+    print(s,artist,album)
